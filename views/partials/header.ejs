@@ -1,0 +1,13 @@
+<header class="name">
+    <a href = "/">
+        <img id ="log" src="/assets/images/logo.jpg" alt="Virat" style="width:100px;height:32px;">
+    </a>
+    <h1> Virat Fan Stop</h1>
+    <p class = "login">
+    <% if(fname === undefined){ %>
+        Not Logged In
+    <% } else { %>
+        <ul><li><%= fname%></li></ul>
+    <% } %>
+    </p>
+</header>

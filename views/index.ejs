@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyWebsite</title>
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/style.css">
+    </head>
+    <body>
+            
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+
+            
+              <% include partials/user-navigation.ejs %>
+            
+            
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>
+        <main>
+            <section>
+                <h2>Batting</h2>
+                <article>
+                    <header>
+                        <h3>Profile</h3>
+                    </header>
+                    <p>A spunky, chubby teenager with gelled hair shot to fame after 
+                        leading India to glory in the Under-19 World Cup at Kuala Lumpur in early 2008. 
+                        In an Indian team filled with saint-like icons worthy of their own hagiographies, 
+                        Virat Kohli, with his most un-Indian, 'bad-boy' intensity, would clearly be an outcast. </p>
+                </article>
+                <article>
+                    <header>
+                        <h3>Grind through the ranks</h3>
+                    </header>
+                    <p>He soon joined the senior Men in Blue in Sri Lanka, come August 2008. 
+                        In the absence of the regular openers, Virat Kohli was given a chance to open the batting in the ODI series. 
+                        He played some commendable knocks in his extended run as an opener, as India went on to win the ODI series. 
+                        However, the established and formidable pair of Tendulkar and Sehwag kept Kohli out of the team</p>
+                    <p>The 20-year-old continued to impress for Delhi and dominated attacks, clearly demonstrating that he belonged at a much higher level; that junior cricket was beneath his standards. Kohli then traveled to Australia in 2009 for the Emerging players tournament and stamped his authority all over the bowling attacks. He added 'big-match temperament' to his résumé too, lacing a fluent hundred in the final against South Africa, and guiding his team to a clinical victory. The young prodigy, barely old enough to receive his man-of-the-match champagne, ended the tournament with 398 runs from 7 outings with two centuries and two fifties, ensuring that he remained fresh in the selectors' minds. </p>
+                </article>
+                <article>
+                        <header>
+                            <h3>That break-through innings… </h3>
+                        </header>
+                        <p>We remember the accolades, but where did it all begin? There's always the one innings that made the world sit up and take notice; the 86-ball knock which he started off as a brash boy, but ended as a man. Chasing an improbable target of 321 off 40 overs to stay alive in the tournament, he laid into the Sri Lankan bowlers and carted his way to 133*, getting India home with more than 2 overs to spare, practically pulling them out of the airport after M.S. Dhoni rather ignorantly remarked that India had already been eliminated from the tournament. </p>
+                        <p>King Kohli had arrived. The king of the run-chase, and a plethora of ODI records in the modern age.</p>
+                    </article>
+            </section>
+        </main>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>

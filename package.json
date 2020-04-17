@@ -1,0 +1,25 @@
+{
+  "name": "nbad",
+  "version": "1.0.0",
+  "description": "little test app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "nodemon": "^1.18.10",
+    "mongoose": "^5.9.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fun",
+    "uncc"
+  ],
+  "author": "me",
+  "license": "ISC"
+}

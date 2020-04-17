@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyWebsite</title>
+        
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/styleMyItem.css">
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/font-awesome-4.7.0/css/font-awesome.css">
+        <!-- #<link rel = "stylesheet" type = "text/css" href = "⁨abc/css/font-awesome.min.css"> -->
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+                <% include ./partials/user-navigation.ejs %>
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>  
+        <main>
+            <header class="user_heading">
+                Charle's Favourite Items
+            </header>
+            <section>
+                <table style="width:100%">
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th> 
+                        <th>Rating</th>
+                        <th>Your Item</th>
+                        <th>              </th>
+                    </tr>
+                    <% for(var i = 0; i < userProfile.length; i++)
+                        { %>
+                    <tr>  
+                        <td><a href="/categories/item/<%= userProfile[i].itemCode%>"><%= userProfile[i].itemName %></a></td>
+                        <td><%= userProfile[i].catalogCategory %></td> 
+                        <td><%= userProfile[i].rating %></td>
+                        <% if(userProfile[i].yourItem == 0) { %>
+                            <td>False</td>
+                            <% } else { %>
+                                <td>True</td>
+                            <% } %>
+                      <td>
+                       
+                        <td>
+                        <form method="get">
+                            <input hidden name="itemCode" value="<%= userProfile[i].itemCode %>">
+                            <button class="but" type="submit" formaction="/myitems/feedback">Update</button>
+                            <button class="but" type="submit" formaction="/myitems/delete">Delete</button>
+                        </form>
+                        </td>  
+                    </tr>
+                    <% } %>
+                </table>   
+            </section>
+            <section class="selection">
+                <p>&#9889; indicates that this item is posted by you</p>
+                <p>Click <a href="/myitems">here</a> to post a new item</p>        
+            </section>
+        </main>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>

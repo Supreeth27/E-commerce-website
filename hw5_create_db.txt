@@ -1,0 +1,91 @@
+use nbad
+db.itemDb.drop()
+db.users.drop()
+db.userProfile.drop()
+db.createCollection("itemDb")
+db.createCollection("users")
+db.createCollection("userProfile")
+db.itemDb.insert([
+    {
+        itemCode: 1,
+        itemName: "Cricket Bat",
+        catalogCategory: "Cricketing Items",
+        description: "This is a bat which was used by Virat Kohli when he scored his highest ODI score till date. He scored 183 aganist Pakistan in 143 balls. He scored this century in Asia cup",
+        rating: 5,
+        imageUrl: "",
+    },
+    {
+        itemCode: 2,
+        itemName: "Cricket Ball",
+        catalogCategory: "Cricketing Items",
+        description: "This was the ball signed by virat Kohli exclusively when India won 2011 World Cup",
+        rating: 4,
+        imageUrl: "",
+    },
+    {
+        itemCode: 3,
+        itemName: "Stumps",
+        catalogCategory: "Cricketing Items",
+        description: "These stumps have greater history than Ashes and Dhoni has done stumping to these stumps",
+        rating: 3.5,
+        imageUrl: "",
+    },
+    {
+        itemCode: 4,
+        itemName: "Hat",
+        catalogCategory: "Indian Jersey",
+        description: "This is the hat signed by Virat Kohli and he used it during Champoins tropy final held on 2015",
+        rating: 3.5,
+        imageUrl: "",
+    },
+    {
+        itemCode: 5,
+        itemName: "Shirt",
+        catalogCategory: "Indian Jersey",
+        description: "This is the shirt signed by Virat Kohli and has a jersey number of 18 on it",
+        rating: 4.5,
+        imageUrl: "",
+    },
+    {
+        itemCode: 6,
+        itemName: "Arm Guard",
+        catalogCategory: "Indian Jersey",
+        description: "These are set of arm guards signed by many veteran cricketers like Sachin, Ganguly, Lara and Dravid",
+        rating: 4,
+        imageUrl: "",
+    }
+])
+db.users.insert([
+  {
+    userId : 1,
+    firstName : 'Supreeth',
+    lastName : 'Segu',
+    emailAddress : 'ssegu@uncc.edu',
+    password : 'virat'
+  },
+  {
+    userId : 2,
+    firstName : 'India',
+    lastName : 'usa',
+    emailAddress : 'developer@google.com',
+    password : 'modi'
+  }
+])
+db.userProfile.insert([
+    {
+  userId : 1,
+      itemCode : 1,
+      itemName : 'Cricket bat',
+      catalogCategory : 'Cricketing Items',
+      rating : 4,
+      yourItem : 1
+    },
+    {
+        userId : 1,
+      itemCode : 4,
+      itemName : 'Hat',
+      catalogCategory: 'Indian Jersey',
+      rating : 5,
+      yourItem : 0
+    }
+])

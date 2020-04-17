@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyWebsite</title>
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/font-awesome-4.7.0/css/font-awesome.css">
+        <!-- <link rel = "stylesheet" type = "text/css" href = "css/font-awesome-4.7.0⁩/css⁩/font-awesome.css"> -->
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/styleItem.css">
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+            <% include ./partials/user-navigation.ejs %>
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>   
+        <main>
+            <section>
+                <p>Home > Categories > Items</p>
+                <img src='<%= item.imageURL %>' alt="Virat" style="width:200px;height:240px;">
+                <form action="/myitems/save" method="GET">
+                    <input type="hidden" name="itemCode" value=<%= item.itemCode %> />
+                    <!-- <input type="hidden" name="action" value="save" /> -->
+                    <input class='button1' type="submit" value='Save it'/>
+                </form>
+                <!-- <form class = "button1" action="/myitems" method="POST"><input type="submit" value="Save it"/></form> -->
+                <form action="/myitems/feedback" method="GET">
+                    <input type="hidden" name="itemCode" value=<%= item.itemCode %> />
+                    <!-- <input type="hidden" name="action" value="save" /> -->
+                    <input class='button2' type="submit" value='Rate it'/>
+                </form>
+                <!-- <form class = "button2" action="/feedback" method="POST"><input type="submit" value="Rate it"/></form>
+                <article class="desc"> -->
+                    <p class="desc1">Item Name: <%= item.itemName %></p>
+                    <p class = "desc2">Item Category: <%= item.catalogCategory %></p>
+                    <p class = "desc3">Rating: <%= item.rating %></p>
+                    
+                </article>  
+                <p class ="image_desc">This bat was autographed by VIRAT KOHLI</p>
+            </section>
+            <section class="detail">
+                <h3 class="detail1">Description</h3>
+                <p class="detail2"><%= item.description %></p>
+                <form class = "button3" action="/categories/catalog"><input type="submit" value="Continue Shopping"/></form>
+            </section>
+        </main>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>

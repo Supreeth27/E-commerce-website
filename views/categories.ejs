@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyWebsite</title>
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/styleCategory.css">
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+            <% include ./partials/user-navigation.ejs %>
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>
+
+        <main>
+            <section>
+                    <h2><%= category[0] %></h2>
+    <ul>
+			<%
+                    for(var j=0; j< itemData.length; j++){
+                        if(itemData[j].catalogCategory === category[0]){ %>
+			<li><a href="/categories/item/<%= itemData[j].itemCode %>"><%= itemData[j].itemName %></a></li>
+			<% }
+        }
+        %>
+      </ul>
+    <h2><%= category[1] %></h2>
+		<ul>
+			<%
+                    for(var j=0; j< itemData.length; j++){
+                        if(category[1] === itemData[j].catalogCategory){ %>
+			<li><a href="/categories/item/<%= itemData[j].itemCode %>"><%= itemData[j].itemName %></a></li>
+			<% }
+                    }
+                     %>
+      </ul>
+            </section>
+        </main>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/style.css">
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/styleLogin.css">
+    </head>
+    <body>
+            
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+            <% include ./partials/user-navigation.ejs %>
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>
+        <p> User name is : ssegu@uncc.edu</p>
+        <p>Password is : virat</p>
+        <% if(flag==1){ %>
+            <h3>Wrong email and password</h3>
+        <% } %>
+        <form action="/signin" method="POST">
+            
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+          
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>

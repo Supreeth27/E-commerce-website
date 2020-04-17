@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyWebsite</title>
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/font-awesome-4.7.0/css/font-awesome.css">
+        <!-- <link rel = "stylesheet" type = "text/css" href = "css/font-awesome-4.7.0⁩/css⁩/font-awesome.css"> -->
+        <link rel = "stylesheet" type = "text/css" href = "/assets/stylesheets/feedback.css">
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <% include ./partials/header.ejs %>
+        </div>
+        <div class="user-nav-wrapper">
+            <% include ./partials/user-navigation.ejs %>
+        </div>
+        <div class="nav-side-wrapper">
+            <% include ./partials/site-navigation.ejs %>
+        </div>   
+        <main>
+            <section>
+                <h2>Give your feedback for</h2>
+                <img src='<%= item.imageURL %>' alt="Virat" style="width:200px;height:240px;">
+                <article class="desc">
+                    <h3 class="desc1"><%= item.itemName %></h3>
+                    <p class = "desc2"><%= item.catalogCategory %></p>
+                    <p class = "desc3"><%= item.description %></p>
+                    
+                    <!-- <form class = "button1" action="/myitems"><input type="submit" value="Confirm Rating"/></form>
+                    <form class = "button2" action="/myitems"><input type="submit" value="I made it &#9989;"/></form> -->
+                    <form method="get" action="/myitems/updateRating">
+                        <input hidden name="itemCode" value="<%= item.itemCode %>">
+                        <h4>Rating:</h4>
+                    <select name="rating">
+                        <option value="1">1 star</option>
+                        <option value="2">2 star</option>
+                        <option value="3">3 star</option>
+                        <option value="4">4 star</option>
+                        <option value="5">5 star</option>
+                    </select>
+          <button type="submit" class="button">Confirm Rating</button>
+                    </form>
+                    <form method="get" action="/myitems/updateFlag">
+                        <label>yourItem: </label>
+                        <select name="yourItem">
+                                <option value="0">false</option>
+                                <option value="1">true</option>
+                        </select>
+                        <input hidden name="itemCode" value="<%= item.itemCode %>">
+                        <button class="button" type="submit">yourItem</button>
+                    </form>
+                </article>
+                
+            </section>
+        </main>
+        <div class="footer-wrapper">
+            <% include ./partials/footer.ejs %>
+        </div>
+    </body>
+</html>
